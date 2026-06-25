@@ -21,6 +21,8 @@ public class AssetsInventory {
 	private String assetserialnumber;
 	private String os_info;
 	private String location;
+	@Lob
+	@Column(name = "handover_form")
 	private byte[] handover_form;
 	public AssetsInventory() {}
 	public AssetsInventory(String employee_id, String employee_name, String employee_department, String asset_tag,
