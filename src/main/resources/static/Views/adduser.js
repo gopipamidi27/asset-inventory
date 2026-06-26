@@ -46,7 +46,10 @@ async function saveuser(){
     formdata.append("userrole",items[4].value);
     const res = await fetch(`/saveuser/`,{
         method: "POST",
-        body : formdata
+        headers: {
+                    'Content-Type':'application/json',
+                },
+        body: formdata
     });
     const result = res.text();
     if(result === "user created successfully")
