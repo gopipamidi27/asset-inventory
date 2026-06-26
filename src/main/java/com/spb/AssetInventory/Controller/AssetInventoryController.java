@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.spb.AssetInventory.Entity.AssetsInventory;
@@ -104,7 +105,7 @@ public class AssetInventoryController {
 		return ResponseEntity.ok(asset);
 	}
 	@PostMapping("/saveuser/")
-	public ResponseEntity<?> saveuser(@RequestBody Users user){
+	public ResponseEntity<?> saveuser(@ModelAttribute Users user){
 		userServices.save(user);
 		return ResponseEntity.ok("user created successfully");
 	}
