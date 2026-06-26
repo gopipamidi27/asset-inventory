@@ -103,6 +103,11 @@ public class AssetInventoryController {
 		
 		return ResponseEntity.ok(asset);
 	}
+	@PostMapping("/saveuser/")
+	public ResponseEntity<?> saveuser(@RequestBody User user){
+		userServices.save(user);
+		return ResponseEntity.ok("user created successfully");
+	}
 //	@CrossOrigin(origins = "http://127.0.0.1:5500")
 	@GetMapping("/user/{id}")
 	public ResponseEntity<?> username(@PathVariable String id){

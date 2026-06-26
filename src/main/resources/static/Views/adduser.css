@@ -45,14 +45,14 @@ button{
     border: none;
     padding: 5px;
     cursor: pointer;
-    font-size: 18px;
+   
 }
 .menu button{
     height: 50px;
     border-bottom: 1px solid white;
-    
+    font-size: 20px;
 }
-button:hover{
+.menu button:hover{
     background-color: rgb(37, 84, 120);
 }
 .menuitem,.assetmenuitem{
@@ -61,49 +61,36 @@ button:hover{
     top : 60px;
     left: 15%;
     margin: 0;
+    padding: 10px;
     background:  rgb(19, 108, 175);
     width: 15%;
     height: auto;
     display: none;
     flex-direction: column;
 }
-#uploadfile{
-    position: fixed ;
-    top: 60px;
-    left: 16%;
-    width: 83%;
-    height: 100vh;
-    border: none;
+.userinformation{
+    position: fixed;
+    top: 70px;
+    left: 15%;
+    margin: 15px;
 }
-#uploadbutton{
-    background-color: rgb(19, 108, 175);
-    color: white ;
-    width: 125px;
-    margin: 20px;
-    border: 1px solid  rgb(19, 108, 175);
-    border-radius: 10px;
-}
-#uploadbutton:hover{
-    background-color: white ;
-    border: 1px solid  rgb(19, 108, 175);
-    color:  rgb(19, 108, 175);
-}
-
-.result{
-    font-size: 18px;
-}
-.ifbody{
+.userdata{
     display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    width: 400px;
+    height: 25px;
+    justify-content: space-between;
+    margin: 10px;
 }
-/* .ifbody #uploadbutton{
+.userinformation button{
+    width: 100px;
+    height: 25px;
+    margin: 10px;
     background-color: rgb(19, 108, 175);
-    color: white ;
-    width: 125px;
-    margin: 20px;
     border: 1px solid rgb(19, 108, 175);
+    color: white;
     border-radius: 10px;
-} */
+}
+.userinformation button:hover{
+    background-color: white;
+    color: rgb(19, 108, 175);
+}
