@@ -44,16 +44,17 @@ async function saveuser(){
     formdata.append("employee_name",items[1].value);
     formdata.append("password",items[2].value);
     formdata.append("userrole",items[4].value);
+    try{
     const res = await fetch(`/saveuser/`,{
         method: "POST",
-        headers: {
-                    'Content-Type':'application/json',
-                },
         body: formdata
     });
-    const result = res.text();
+    const result = await res.text();
     if(result === "user created successfully")
         console.log("user created");
     else
         console.log("user creation failed");
+}catch(error){
+        console.log("failed");
+}
 }
