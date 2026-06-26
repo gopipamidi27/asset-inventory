@@ -52,12 +52,19 @@ async function saveuser(){
     });
     const result = await res.text();
     if(result === "user created successfully"){
-        status.style.color = "green";
-        status.innerHTML = "user created";
+        showstatus(result,"green");
     }
     else
-        status.innerHTML = "user creation failed";
+        showstatus(result,"red");
 }catch(error){
         status.innerHTML = "failed";
 }
+}
+function showstatus(res,color){
+    status.style.color = color;
+    status.innerHTML = res ;
+    setTimeout(()=>{
+        status.style.display = "none";
+        window.location.href = "homepage.html";
+    },500);
 }
