@@ -34,22 +34,22 @@ a{
     left : 0;
     display: flex;
     flex-direction: column;
-    font-size: 25px;
+    font-size: 18px;
     width: 15%;
     height: 100%;
     background-color: rgb(19, 108, 175);
 }
 button{
-    color:white;
+    color: white;
     background: none;
     border: none;
     padding: 5px;
     cursor: pointer;
-    font-size: 18px;
 }
 .menu button{
     height: 50px;
     border-bottom: 1px solid white;
+    font-size: 18px;
     
 }
 button:hover{
@@ -92,18 +92,3 @@ button:hover{
 .result{
     font-size: 18px;
 }
-.ifbody{
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-/* .ifbody #uploadbutton{
-    background-color: rgb(19, 108, 175);
-    color: white ;
-    width: 125px;
-    margin: 20px;
-    border: 1px solid rgb(19, 108, 175);
-    border-radius: 10px;
-} */

@@ -104,21 +104,7 @@ public class AssetInventoryController {
 		
 		return ResponseEntity.ok(asset);
 	}
-	@PostMapping("/saveuser/")
-	public ResponseEntity<?> saveuser(@ModelAttribute Users user){
-		userServices.save(user);
-		return ResponseEntity.ok("user created successfully");
-	}
-//	@CrossOrigin(origins = "http://127.0.0.1:5500")
-	@GetMapping("/user/{id}")
-	public ResponseEntity<?> username(@PathVariable String id){
-		Optional<Users> user = userServices.findById(id);
-		if(user.isEmpty() ) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No data found with given id :" +id);
-		}
-		
-		return ResponseEntity.ok(user);
-	}
+	
 //	@CrossOrigin(origins = "http://127.0.0.1:5500")
 	@PutMapping("/updatedetails/{id}")
 	public ResponseEntity<?> updatedetails(@PathVariable String id,@RequestParam String employee_name,
@@ -152,22 +138,6 @@ public class AssetInventoryController {
 		return ResponseEntity.ok("Details Updated");
 		
 	}
-//	@CrossOrigin(origins = "http://127.0.0.1:5500")
-	@PatchMapping("updateuserdetails/{id}")
-	public ResponseEntity<?> updateuserdetails(@PathVariable String id, @RequestBody Users user){
-		Optional<Users> useroptional = userServices.findById(id);
-		if(useroptional.isEmpty() ) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No data found with given id :" +id);
-		}
-		Users user1 = useroptional.get();
-		if(user.getEmployee_name() != null)
-			user1.setEmployee_name(user.getEmployee_name());
-		if(user.getPassword() != null)
-			user1.setPassword(user.getPassword());
-		userServices.save(user1);
-		return ResponseEntity.ok("user details updated");
-	}
-//	@CrossOrigin(origins = "http://127.0.0.1:5500")
 	@GetMapping("/downloadinventorylist/")
 	public ResponseEntity<?> downloadinventorylist(){
 		byte[] assetslist = assetInventoryService.downloadAll();
@@ -253,6 +223,40 @@ public class AssetInventoryController {
 		assetInventoryService.uploadDetails(assetsInventoryItems1);
 		return ResponseEntity.ok("Details uploaded successfully");
 	}
-	
-	
+
+	@PostMapping("/saveuser/")
+	public ResponseEntity<?> saveuser(@ModelAttribute Users user){
+		userServices.save(user);
+		return ResponseEntity.ok("user created successfully");
+	}
+//	@CrossOrigin(origins = "http://127.0.0.1:5500")
+	@GetMapping("/user/{id}")
+	public ResponseEntity<?> username(@PathVariable String id){
+		Optional<Users> user = userServices.findById(id);
+		if(user.isEmpty() ) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No data found with given id :" +id);
+		}
+		
+		return ResponseEntity.ok(user);
+	}
+	@PatchMapping("updateuserdetails/{id}")
+	public ResponseEntity<?> updateuserdetails(@PathVariable String id, @RequestBody Users user){
+		Optional<Users> useroptional = userServices.findById(id);
+		if(useroptional.isEmpty() ) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No data found with given id :" +id);
+		}
+		Users user1 = useroptional.get();
+		if(user.getEmployee_name() != null)
+			user1.setEmployee_name(user.getEmployee_name());
+		if(user.getPassword() != null)
+			user1.setPassword(user.getPassword());
+		userServices.save(user1);
+		return ResponseEntity.ok("user details updated");
+	}
+	@GetMapping("/userslist/")
+	public ResponseEntity<?> userslist(){
+			List<Users> users = userServices.findAll();
+			return ResponseEntity.ok(users);
+			
+	}
 }

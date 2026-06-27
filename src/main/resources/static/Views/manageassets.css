@@ -45,11 +45,12 @@ button{
     border: none;
     padding: 5px;
     cursor: pointer;
-    font-size: 18px;
+    
 }
 .menu button{
     height: 50px;
     border-bottom: 1px solid white;
+    font-size: 18px;
     
 }
 button:hover{
