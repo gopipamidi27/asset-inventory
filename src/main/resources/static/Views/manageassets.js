@@ -11,8 +11,8 @@ const userrole = `${localStorage.getItem('role')}`;
 const menu1 = document.getElementById("addasset");
 const menu3 = document.getElementById("Users");
 if(userrole === 'user'){
-    menu1.style.display = 'none';
-    menu3.style.display = 'none';
+    menu1?.style.display = 'none';
+    menu3?.style.display = 'none';
 
 }
 if(userrole === 'admin'){
