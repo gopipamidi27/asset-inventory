@@ -35,11 +35,11 @@ if(userrole === 'admin'){
 assets();
 uploadfile.addEventListener('click',()=>{
     window.location.href = "uploadmultiple.html";
-    menuitem1.style.display = "none";
+    menuitem1?.style.setProperty('display','none');
 });
 addasset.addEventListener('click',()=>{
     window.location.href = "singleentry.html";
-    menuitem1.style.display = "none";
+    menuitem1?.style.setProperty('display','none');
 });
 function menuitemview(e){
     e.stopPropagation();
@@ -76,7 +76,6 @@ infile.addEventListener('change',()=>{
 async function assets() {
     const res = await fetch(`/inventory/${assttag}`);
     result = await res.json();
-    console.log(result);
     nodelist[0].value = result.employeeid;
     nodelist[1].value = result.employee_name;
     nodelist[2].value = result.employee_department;
@@ -90,19 +89,6 @@ async function assets() {
     nodelist[8].value = result.location;
     if(result.handover_form)
         hf.innerHTML = `${result.assettag}.pdf`;
-   console.log(result);
-}
-function menuitemview(){
-    if(menuitem1.style.display == "flex")
-        menuitem1.style.display = "none";
-    else
-        menuitem1.style.display = "flex";    
-}
-function assetsmenu(){
-    if(assetsmenuitem.style.display == "flex")
-        assetsmenuitem.style.display = "none";
-    else
-        assetsmenuitem.style.display = "flex";
 }
 function reset(){
     nodelist.forEach(ele =>{
