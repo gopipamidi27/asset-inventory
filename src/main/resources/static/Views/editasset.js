@@ -117,22 +117,23 @@ function savedata(){
         sempid.style.display = "inline-block";
         sempid.innerHTML = "Please enter Employee ID";
     }
-    if(nodelist[3].value == ""){
+    else if(nodelist[3].value == ""){
         sasttag.style.display = "inline-block";
         sasttag.innerHTML = "Please enter Assettag";
     }
-    if(nodelist[6].value == ""){
+    else if(nodelist[6].value == ""){
         sastsn.style.display = "inline-block";
         sastsn.innerHTML = "Please enter Asset serialnumber";
     }
-    if(nodelist[8].value == ""){
+    else if(nodelist[8].value == ""){
         sl.style.display = "inline-block";
         sl.innerHTML = "Please enter location";
     }
-    if(nodelist[9].value == ""){
+    else if(nodelist[9].value == ""){
         sl.style.display = "inline-block";
         sl.innerHTML = "Please upload HandoverForm";
     }
+    else{
     formdata.append("employee_id",nodelist[0].value);
     formdata.append("employee_name",nodelist[1].value);
     formdata.append("employee_department",nodelist[2].value);
@@ -155,7 +156,7 @@ function savedata(){
     else
         formdata.append("handover_form",infile.files[0]);
     updateassetdetails();
-
+    }
 }
 reset();
 async function updateassetdetails(){

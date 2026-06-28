@@ -63,6 +63,7 @@ function resultdata(result){
     result.forEach(ele => {
         const row = document.createElement('tr');
         row.id = `row-${ele.assettag}`;
+        row.className = "trow";
         let hf = "";
         if(ele.handover_form){
             hf = `<a href = "/downloadhandover/${ele.assettag}" target ="_blank">${ele.employeeid}</a>`;

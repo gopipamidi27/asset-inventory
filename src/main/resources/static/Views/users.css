@@ -1,16 +1,14 @@
 .userslist{
      position: fixed;
     left : 15%;
-    top : 90px;
+    top : 100px;
     margin: 20px 30px;
     width: 600px;
     overflow-x: auto;
     height: auto;
-    border: 1px solid rgb(209, 201, 201);
-    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(12, 12, 12);
 }
 .usertable{
-    border: 1px solid black;
     width: 600px;
     border-collapse: collapse;
     
@@ -25,6 +23,9 @@ tr{
     text-align: center;
     height: 50px;
     border-bottom: 1px solid  rgb(19, 108, 175);
+}
+tr:hover{
+    background-color: rgb(116, 113, 113);
 }
 #edit{
     background-color: rgb(119, 210, 119);
@@ -41,7 +42,7 @@ tr{
 #newuser{
     position: fixed;
     top : 80px;
-    right : 10%;
+    left : 18%;
     background-color: rgb(19, 108, 175);
     color: white;
     border: 1px solid rgb(19, 108, 175);
